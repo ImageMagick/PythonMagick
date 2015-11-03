@@ -1,0 +1,6 @@
+obj=Class('Magick::DrawableDashArray','/usr/include/Magick++/Drawable.h')
+exclude(obj.copy)
+exclude(obj.default_copy)
+exclude(obj.operator['()'])
+exclude(obj.dasharray)
+declaration_code('#include <Magick++.h>')

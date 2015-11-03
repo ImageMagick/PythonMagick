@@ -1,0 +1,6 @@
+pixels=Class('Magick::Pixels','/usr/include/Magick++/Pixels.h')
+exclude(pixels.get)
+exclude(pixels.getConst)
+exclude(pixels.set)
+exclude(pixels.indexes)
+exclude(pixels.setPixels)

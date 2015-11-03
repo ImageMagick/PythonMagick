@@ -1,0 +1,2 @@
+Class('Magick::Geometry','/usr/include/Magick++/Geometry.h')
+module_code('implicitly_convertible<std::string,Magick::Geometry>();')

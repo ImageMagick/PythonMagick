@@ -1,0 +1,9 @@
+blob=Class('Magick::Blob','/usr/include/Magick++/Blob.h')
+
+#   create wrappers for setting/getting Blob data
+
+get_blob_data=Function('get_blob_data','helpers_src/Blob.h')
+
+exclude(blob.data)
+set_wrapper(blob.update,"update_wrapper")
+#add_method(blob,"get_blob_data")

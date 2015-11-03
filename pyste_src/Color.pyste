@@ -1,0 +1,2 @@
+Class('Magick::Color','/usr/include/Magick++/Color.h')
+module_code('implicitly_convertible<std::string,Magick::Color>();')

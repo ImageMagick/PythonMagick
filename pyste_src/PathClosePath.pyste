@@ -1,0 +1,5 @@
+obj=Class('Magick::PathClosePath','/usr/include/Magick++/Drawable.h')
+exclude(obj.copy)
+exclude(obj.default_copy)
+exclude(obj.operator['()'])
+declaration_code('#include <Magick++.h>')
