@@ -6,4 +6,5 @@ get_blob_data=Function('get_blob_data','helpers_src/Blob.h')
 
 exclude(blob.data)
 set_wrapper(blob.update,"update_wrapper")
+set_wrapper(blob.updateNoCopy,"updateNoCopy_wrapper")
 #add_method(blob,"get_blob_data")

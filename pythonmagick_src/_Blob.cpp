@@ -24,12 +24,12 @@ void Export_pyste_src_Blob()
 {
     scope* Magick_Blob_scope = new scope(
     class_< Magick::Blob >("Blob", init<  >())
-        .def(init< const void*, size_t >())
+        .def("__init__", &update_wrapper)
         .def(init< const Magick::Blob& >())
         .def("base64", (void (Magick::Blob::*)(const std::string) )&Magick::Blob::base64)
         .def("base64", (std::string (Magick::Blob::*)() )&Magick::Blob::base64)
         .def("update", &update_wrapper)
-        .def("updateNoCopy", &Magick::Blob::updateNoCopy, Magick_Blob_updateNoCopy_overloads_2_3())
+        .def("updateNoCopy", &updateNoCopy_wrapper)
         .def("length", &Magick::Blob::length)
     );
 
