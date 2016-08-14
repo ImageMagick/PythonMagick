@@ -31,7 +31,12 @@ void Export_pyste_src_CompositeOperator()
         .value("DarkenCompositeOp", MagickCore::DarkenCompositeOp)
         .value("OverlayCompositeOp", MagickCore::OverlayCompositeOp)
         .value("CopyYellowCompositeOp", MagickCore::CopyYellowCompositeOp)
+#if MagickLibVersion < 0x700
         .value("MinusCompositeOp", MagickCore::MinusCompositeOp)
+#else
+        .value("MinusDstCompositeOp", MagickCore::MinusDstCompositeOp)
+        .value("MinusSrcCompositeOp", MagickCore::MinusSrcCompositeOp)
+#endif
         .value("UndefinedCompositeOp", MagickCore::UndefinedCompositeOp)
         .value("HueCompositeOp", MagickCore::HueCompositeOp)
         .value("DstOutCompositeOp", MagickCore::DstOutCompositeOp)
@@ -45,18 +50,31 @@ void Export_pyste_src_CompositeOperator()
         .value("SrcInCompositeOp", MagickCore::SrcInCompositeOp)
         .value("CopyCompositeOp", MagickCore::CopyCompositeOp)
         .value("DstOverCompositeOp", MagickCore::DstOverCompositeOp)
+#if MagickLibVersion < 0x700
         .value("CopyOpacityCompositeOp", MagickCore::CopyOpacityCompositeOp)
+#else
+        .value("CopyAlphaCompositeOp", MagickCore::CopyAlphaCompositeOp)
+#endif
         .value("ColorBurnCompositeOp", MagickCore::ColorBurnCompositeOp)
         .value("DstCompositeOp", MagickCore::DstCompositeOp)
         .value("CopyBlueCompositeOp", MagickCore::CopyBlueCompositeOp)
         .value("DissolveCompositeOp", MagickCore::DissolveCompositeOp)
         .value("MultiplyCompositeOp", MagickCore::MultiplyCompositeOp)
+#if MagickLibVersion < 0x700
         .value("DivideCompositeOp", MagickCore::DivideCompositeOp)
+#else
+        .value("DivideDstCompositeOp", MagickCore::DivideDstCompositeOp)
+        .value("DivideSrcCompositeOp", MagickCore::DivideSrcCompositeOp)
+#endif
         .value("ColorDodgeCompositeOp", MagickCore::ColorDodgeCompositeOp)
         .value("SrcOverCompositeOp", MagickCore::SrcOverCompositeOp)
         .value("AtopCompositeOp", MagickCore::AtopCompositeOp)
         .value("SoftLightCompositeOp", MagickCore::SoftLightCompositeOp)
+#if MagickLibVersion < 0x700
         .value("AddCompositeOp", MagickCore::AddCompositeOp)
+#else
+        .value("ModulusAddCompositeOp", MagickCore::ModulusAddCompositeOp)
+#endif
         .value("OverCompositeOp", MagickCore::OverCompositeOp)
         .value("SrcCompositeOp", MagickCore::SrcCompositeOp)
         .value("ClearCompositeOp", MagickCore::ClearCompositeOp)
@@ -65,7 +83,11 @@ void Export_pyste_src_CompositeOperator()
         .value("CopyGreenCompositeOp", MagickCore::CopyGreenCompositeOp)
         .value("LightenCompositeOp", MagickCore::LightenCompositeOp)
         .value("ReplaceCompositeOp", MagickCore::ReplaceCompositeOp)
+#if MagickLibVersion < 0x700
         .value("SubtractCompositeOp", MagickCore::SubtractCompositeOp)
+#else
+        .value("ModulusSubtractCompositeOp", MagickCore::ModulusSubtractCompositeOp)
+#endif
         .value("ColorizeCompositeOp", MagickCore::ColorizeCompositeOp)
         .value("CopyRedCompositeOp", MagickCore::CopyRedCompositeOp)
         .value("XorCompositeOp", MagickCore::XorCompositeOp)

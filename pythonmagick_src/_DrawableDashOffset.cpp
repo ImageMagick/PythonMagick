@@ -12,6 +12,7 @@
 // Using =======================================================================
 using namespace boost::python;
 
+#if MagickLibVersion < 0x700
 namespace  {
 
 struct Magick_DrawableDashOffset_Wrapper: Magick::DrawableDashOffset
@@ -36,4 +37,29 @@ void Export_pyste_src_DrawableDashOffset()
     ;
 implicitly_convertible<Magick::DrawableDashOffset,Magick::Drawable>();
 }
+#else
+namespace  {
 
+struct Magick_DrawableStrokeDashOffset_Wrapper: Magick::DrawableStrokeDashOffset
+{
+    Magick_DrawableStrokeDashOffset_Wrapper(PyObject* py_self_, const double p0):
+        Magick::DrawableStrokeDashOffset(p0), py_self(py_self_) {}
+
+
+    PyObject* py_self;
+};
+
+
+}// namespace 
+
+
+// Module ======================================================================
+void Export_pyste_src_DrawableStrokeDashOffset()
+{
+    class_< Magick::DrawableStrokeDashOffset, boost::noncopyable, Magick_DrawableStrokeDashOffset_Wrapper >("DrawableStrokeDashOffset", init< const double >())
+        .def("offset", (void (Magick::DrawableStrokeDashOffset::*)(const double) )&Magick::DrawableStrokeDashOffset::offset)
+        .def("offset", (double (Magick::DrawableStrokeDashOffset::*)() const)&Magick::DrawableStrokeDashOffset::offset)
+    ;
+implicitly_convertible<Magick::DrawableStrokeDashOffset,Magick::Drawable>();
+}
+#endif

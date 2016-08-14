@@ -17,7 +17,9 @@ void Export_pyste_src_GravityType()
         .value("UndefinedGravity", MagickCore::UndefinedGravity)
         .value("CenterGravity", MagickCore::CenterGravity)
         .value("SouthWestGravity", MagickCore::SouthWestGravity)
+#if MagickLibVersion < 0x700
         .value("StaticGravity", MagickCore::StaticGravity)
+#endif
         .value("SouthGravity", MagickCore::SouthGravity)
         .value("ForgetGravity", MagickCore::ForgetGravity)
         .value("EastGravity", MagickCore::EastGravity)

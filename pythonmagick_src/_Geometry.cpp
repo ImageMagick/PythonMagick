@@ -13,7 +13,11 @@ using namespace boost::python;
 void Export_pyste_src_Geometry()
 {
     class_< Magick::Geometry >("Geometry", init<  >())
+#if MagickLibVersion < 0x700
         .def(init< size_t, size_t, optional< size_t, size_t, bool, bool > >())
+#else
+        .def(init< size_t, size_t, optional< size_t, size_t > >())
+#endif
         .def(init< const std::string& >())
         .def(init< const char* >())
         .def(init< const Magick::Geometry& >())
@@ -26,10 +30,12 @@ void Export_pyste_src_Geometry()
         .def("xOff", (::ssize_t (Magick::Geometry::*)() const)&Magick::Geometry::xOff)
         .def("yOff", (void (Magick::Geometry::*)(::ssize_t) )&Magick::Geometry::yOff)
         .def("yOff", (::ssize_t (Magick::Geometry::*)() const)&Magick::Geometry::yOff)
+#if MagickLibVersion < 0x700
         .def("xNegative", (void (Magick::Geometry::*)(bool) )&Magick::Geometry::xNegative)
         .def("xNegative", (bool (Magick::Geometry::*)() const)&Magick::Geometry::xNegative)
         .def("yNegative", (void (Magick::Geometry::*)(bool) )&Magick::Geometry::yNegative)
         .def("yNegative", (bool (Magick::Geometry::*)() const)&Magick::Geometry::yNegative)
+#endif
         .def("percent", (void (Magick::Geometry::*)(bool) )&Magick::Geometry::percent)
         .def("percent", (bool (Magick::Geometry::*)() const)&Magick::Geometry::percent)
         .def("aspect", (void (Magick::Geometry::*)(bool) )&Magick::Geometry::aspect)

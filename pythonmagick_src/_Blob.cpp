@@ -27,7 +27,11 @@ void Export_pyste_src_Blob()
         .def("__init__", &update_wrapper)
         .def(init< const Magick::Blob& >())
         .def("base64", (void (Magick::Blob::*)(const std::string) )&Magick::Blob::base64)
+#if MagickLibVersion < 0x700
         .def("base64", (std::string (Magick::Blob::*)() )&Magick::Blob::base64)
+#else
+        .def("base64", (std::string (Magick::Blob::*)() const )&Magick::Blob::base64)
+#endif
         .def("update", &update_wrapper)
         .def("updateNoCopy", &updateNoCopy_wrapper)
         .def("length", &Magick::Blob::length)

@@ -10,9 +10,15 @@
 using namespace boost::python;
 
 // Module ======================================================================
+#if MagickLibVersion < 0x700
 void Export_pyste_src_FilterTypes()
 {
     enum_< MagickCore::FilterTypes >("FilterTypes")
+#else
+void Export_pyste_src_FilterType()
+{
+    enum_< MagickCore::FilterType >("FilterType")
+#endif
         .value("BesselFilter", MagickCore::BesselFilter)
         .value("QuadraticFilter", MagickCore::QuadraticFilter)
         .value("BartlettFilter", MagickCore::BartlettFilter)

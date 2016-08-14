@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.69)
-AC_INIT([PythonMagick],[0.9.13],[],[PythonMagick])
+AC_INIT([PythonMagick],[0.9.14],[],[PythonMagick])
 AC_CONFIG_SRCDIR([pythonmagick_src/_PathLinetoAbs.cpp])
 AC_CONFIG_AUX_DIR([config])
 AC_CONFIG_MACRO_DIR([m4])
