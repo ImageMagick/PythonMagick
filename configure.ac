@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.69)
-AC_INIT([PythonMagick],[0.9.14],[],[PythonMagick])
+AC_INIT([PythonMagick],[0.9.15],[],[PythonMagick])
 AC_CONFIG_SRCDIR([pythonmagick_src/_PathLinetoAbs.cpp])
 AC_CONFIG_AUX_DIR([config])
 AC_CONFIG_MACRO_DIR([m4])
@@ -27,13 +27,24 @@ AC_PROG_INSTALL
 AC_PROG_LN_S
 AC_PROG_MAKE_SET
 AC_PROG_LIBTOOL
-AM_PATH_PYTHON([2.4])
 PKG_PROG_PKG_CONFIG
 
 # Add configure option --enable-maintainer-mode which enables dependency
 # checking and generation useful to package maintainers.  This is made an
 # option to avoid confusing end users.
-AM_MAINTAINER_MODE
+AC_ARG_WITH([python-min-version],
+  [AS_HELP_STRING([--with-python-min-version=version : python version to use])],
+  [PYTHON_MIN_VERSION="$withval"],
+  [PYTHON_MIN_VERSION="2.4"]) AM_MAINTAINER_MODE
+AX_COMPARE_VERSION($PYTHON_MIN_VERSION, lt, 2.4,AC_MSG_ERROR([Python version not supported]))
+AC_MSG_CHECKING([for python with minimal version])
+AC_MSG_RESULT([$PYTHON_MIN_VERSION])
+AM_PATH_PYTHON([$PYTHON_MIN_VERSION])
+AX_PYTHON_DEVEL([>= '$PYTHON_MIN_VERSION'])
+
+# Checks for libraries.
+AX_BOOST_BASE
+AX_BOOST_PYTHON
 
 # Checks for libraries.
 AX_BOOST_BASE

@@ -457,7 +457,7 @@ nodist_EXTRA__PythonMagick_la_SOURCES = dummy.cpp
 _PythonMagick_la_LDFLAGS = -avoid-version -module $(BOOST_LDFLAGS)
 
 # And the libraries to include
-_PythonMagick_la_LIBADD = pythonmagick_src/libpymagick.la helpers_src/libhelper.la $(BOOST_LDFLAGS) -lboost_python $(MAGICKPP_LIBS) $(MAGICK_LIBS)
+_PythonMagick_la_LIBADD = pythonmagick_src/libpymagick.la helpers_src/libhelper.la $(BOOST_LDFLAGS) -l$(BOOST_PYTHON_LIB) $(MAGICKPP_LIBS) $(MAGICK_LIBS)
 EXTRA_DIST = autogen.pl SConstruct pyste_src LICENSE
 
 # Automatically reconfigure libtool
