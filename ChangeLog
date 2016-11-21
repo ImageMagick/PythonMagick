@@ -1,3 +1,7 @@
+2015-11-21  0.9.64 Cristy  <quetzlzacatenango@image...>
+  * Update to the latest autoconf / automake files (reference
+    https://github.com/ImageMagick/PythonMagick/issues/8).
+
 2015-08-14  0.9.14 Cristy  <quetzlzacatenango@image...>
   * Ensure PythonMagick compiles against ImageMagick 7.0.2 and above.
 
