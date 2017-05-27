@@ -393,12 +393,12 @@ void Export_pyste_src_Image()
         .def("alpha", (void (Magick::Image::*)(const bool) )&Magick::Image::alpha)
         .def("alpha", (bool (Magick::Image::*)() const)&Magick::Image::alpha)
 #endif
-#if MagickLibVersion < 0x700
-        .def("matteColor", (void (Magick::Image::*)(const Magick::Color&) )&Magick::Image::matteColor)
-        .def("matteColor", (Magick::Color (Magick::Image::*)() const)&Magick::Image::matteColor)
-#else
+#if (MagickLibVersion >= 0x700) && (MagickLibVersion < 0x705)
         .def("alphaColor", (void (Magick::Image::*)(const Magick::Color&) )&Magick::Image::alphaColor)
         .def("alphaColor", (Magick::Color (Magick::Image::*)() const)&Magick::Image::alphaColor)
+#else
+        .def("matteColor", (void (Magick::Image::*)(const Magick::Color&) )&Magick::Image::matteColor)
+        .def("matteColor", (Magick::Color (Magick::Image::*)() const)&Magick::Image::matteColor)
 #endif
         .def("meanErrorPerPixel", &Magick::Image::meanErrorPerPixel)
         .def("modulusDepth", (void (Magick::Image::*)(const size_t) )&Magick::Image::modulusDepth)
