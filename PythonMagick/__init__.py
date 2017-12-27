@@ -51,10 +51,10 @@ class DrawableColor(_PythonMagick.DrawableColor):
 class DrawableCompositeImage(_PythonMagick.DrawableCompositeImage):
    pass
 
-class DrawableDashArray(_PythonMagick.DrawableDashArray):
+class DrawableStrokeDashArray(_PythonMagick.DrawableStrokeDashArray):
    pass
 
-class DrawableDashOffset(_PythonMagick.DrawableDashOffset):
+class DrawableStrokeDashOffset(_PythonMagick.DrawableStrokeDashOffset):
    pass
 
 class DrawableEllipse(_PythonMagick.DrawableEllipse):
@@ -78,7 +78,7 @@ class DrawableGravity(_PythonMagick.DrawableGravity):
 class DrawableLine(_PythonMagick.DrawableLine):
    pass
 
-class DrawableMatte(_PythonMagick.DrawableMatte):
+class DrawableAlpha(_PythonMagick.DrawableAlpha):
    pass
 
 class DrawableMiterLimit(_PythonMagick.DrawableMiterLimit):
@@ -174,7 +174,7 @@ class DrawableViewbox(_PythonMagick.DrawableViewbox):
 class Exception(_PythonMagick.Exception):
    pass
 
-class FilterTypes(_PythonMagick.FilterTypes):
+class FilterType(_PythonMagick.FilterType):
    pass
 
 class Geometry(_PythonMagick.Geometry):

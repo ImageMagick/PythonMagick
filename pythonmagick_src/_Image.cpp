@@ -490,8 +490,8 @@ void Export_pyste_src_Image()
         .def("modifyImage", &Magick::Image::modifyImage)
 #if MagickLibVersion < 0x700
         .def("throwImageException", &Magick::Image::throwImageException)
-#endif
         .staticmethod("cacheThreshold")
+#endif
         .def( self == self )
         .def( self != self )
         .def( self > self )

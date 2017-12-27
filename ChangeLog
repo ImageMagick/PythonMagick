@@ -1,4 +1,8 @@
-2015-11-21  0.9.64 Cristy  <quetzlzacatenango@image...>
+2016-12-27  0.9.19 Cristy  <quetzlzacatenango@image...>
+  * Compatibility with ImageMagick version >= 7 (reference
+    https://github.com/ImageMagick/PythonMagick/issues/15).
+
+2015-11-21  0.9.14 Cristy  <quetzlzacatenango@image...>
   * Update to the latest autoconf / automake files (reference
     https://github.com/ImageMagick/PythonMagick/issues/8).
 
