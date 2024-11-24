@@ -216,7 +216,7 @@ void Export_pyste_src_Image()
 #endif
         .def("resize", &Magick::Image::resize)
         .def("roll", (void (Magick::Image::*)(const Magick::Geometry&) )&Magick::Image::roll)
-        .def("roll", (void (Magick::Image::*)(const size_t, const size_t) )&Magick::Image::roll)
+        .def("roll", (void (Magick::Image::*)(const ssize_t, const ssize_t) )&Magick::Image::roll)
         .def("rotate", &Magick::Image::rotate)
         .def("sample", &Magick::Image::sample)
         .def("scale", &Magick::Image::scale)
